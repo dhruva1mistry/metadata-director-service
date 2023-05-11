@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mysql8:
+    build:
+      context: .
+      dockerfile: DockerfileMySql8
+    ports:
+      - "3306:3306"
+    expose:
+      # Opens port 3306 on the container
+      - "3306"
+    networks:
+      - booksmart
+#  metadata-director-service:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - "8080:8080"
+#    expose:
+#      - "8080"
+
+networks:
+  booksmart:
+    driver: bridge

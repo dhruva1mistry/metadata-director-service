@@ -1,0 +1,10 @@
+FROM mysql:8
+
+ENV MYSQL_ROOT_PASSWORD=booksmart
+ENV MYSQL_DATABASE=booksmart_metadata
+ENV MYSQL_USER=dhruva
+ENV MYSQL_PASSWORD=dhruva
+
+
+COPY docker-mysql8/scripts/create_db.sql /docker-entrypoint-initdb.d/
+COPY docker-mysql8/  /var/lib/mysql-files/docker-resources/
