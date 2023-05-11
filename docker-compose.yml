@@ -11,14 +11,14 @@ services:
       - "3306"
     networks:
       - booksmart
-#  metadata-director-service:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#    ports:
-#      - "8080:8080"
-#    expose:
-#      - "8080"
+  metadata-director-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
 
 networks:
   booksmart:
