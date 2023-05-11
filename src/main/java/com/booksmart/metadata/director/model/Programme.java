@@ -1,11 +1,36 @@
 package com.booksmart.metadata.director.model;
 
+import com.booksmart.metadata.director.bo.MetadataRecommendationResponse;
+import java.io.Serializable;
+import java.time.Instant;
 import java.util.UUID;
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.SqlResultSetMapping;
 
 @Entity
-public class Programme {
+//@SqlResultSetMapping(
+//        name = "userEntityMapping",
+//        classes = {
+//                @ConstructorResult(
+//                        targetClass = MetadataRecommendationResponse.class,
+//                        columns = {
+//                                @ColumnResult(name = "campId", type = Integer.class),
+//                                @ColumnResult(name = "userCount", type = Byte.class),
+//                                @ColumnResult(name = "modifiedAt", type = Instant.class)
+//                        }
+//                )
+//        }
+//)
+//@NamedNativeQuery(
+//        name = "UserEntity.getStatsDTO",
+//        query = "YOUR_QUERY",
+//        resultSetMapping = "userEntityMapping"
+//)
+public class Programme implements Serializable {
     @Id
     private UUID ProgrammeUuid;
     private UUID SeasonUuid;
