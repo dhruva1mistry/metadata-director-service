@@ -24,7 +24,7 @@ public class MetadataRecommService {
                 .map(MetadataRecommendationRequest::getTopic)
                 .collect(Collectors.toSet());
 
-        Pageable pageable = PageRequest.of(2, 10);
+        Pageable pageable = PageRequest.of(1, 10);
 
         return topics.stream()
                 .map(topic -> Map.of(topic, programmeRepository.search(topic, pageable).getContent()))
